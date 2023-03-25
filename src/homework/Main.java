@@ -1,9 +1,14 @@
 package homework;
 
-public class Main{
-    public static void main(String[] args){
+import homework.impl.UserReporter;
+import homework.impl.UserSaver;
+
+public class Main {
+    public static void main(String[] args) {
         User user = new User("Bob");
-        user.report();
-        user.save();
+        UserSaver usersaver = new UserSaver();
+        usersaver.save(user);
+        UserReporter userReporter = new UserReporter();
+        userReporter.report(user);
     }
 }
